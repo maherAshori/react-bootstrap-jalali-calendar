@@ -101,7 +101,7 @@ const DatePicker = ({
     className: "border-0 p-0 rounded"
   }, /*#__PURE__*/React.createElement(CalendarApp, {
     events: events,
-    action: selectedDate,
+    callback: selectedDate,
     value: value,
     options: options
   })));

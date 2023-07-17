@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment-jalaali';
 import { Button, ButtonGroup, Col, Row, Table } from "react-bootstrap";
+import './calendar.css';
 class CalendarApp extends React.PureComponent {
   state = {
     uniqueId: null,
@@ -367,10 +368,10 @@ class CalendarApp extends React.PureComponent {
       }
     }), () => {
       const {
-        action
+        callback
       } = this.props;
       item.gregorian = moment(item.date, 'jYYYY/jM/jD').format('YYYY-M-D');
-      action(item);
+      if (callback) callback(item);
     });
   };
   render() {
@@ -440,7 +441,7 @@ class CalendarApp extends React.PureComponent {
       onClick: () => this.changeView('month')
     }, monthInfo?.name), /*#__PURE__*/React.createElement(Button, {
       variant: toolsSubBtnColor,
-      disabled: options && options.stopChangingYears || options.stopChangingMonths,
+      disabled: options && (options.stopChangingYears || options.stopChangingMonths),
       className: "text-decoration-none px-3",
       onClick: () => this.changeView('year')
     }, monthInfo?.year))), /*#__PURE__*/React.createElement("div", {
@@ -518,7 +519,7 @@ class CalendarApp extends React.PureComponent {
       className: `p-3 text-center ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
     }, /*#__PURE__*/React.createElement(Button, {
       variant: 'outline-secondary',
-      disabled: options && options.stopChangingYears || options.stopChangingMonths,
+      disabled: options && (options.stopChangingYears || options.stopChangingMonths),
       className: "text-decoration-none px-5",
       onClick: () => this.changeView('year')
     }, monthInfo?.year)), /*#__PURE__*/React.createElement(Table, {

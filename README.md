@@ -82,6 +82,78 @@ _Event property default is `undefined`_
 }
 ```
 
+## Calendar
+
+```js
+import Calendar from 'react-bootstrap-jalali-calendar/dist/calendar';
+
+function App() {
+    const options = {
+        hideTodayButton: false,
+        stopChangingYears: false,
+        calendarHeaderColor: "primary",
+        hideToolsBar: false,
+        calendarToolsColor: "light",
+    }
+
+    const events = [
+        {
+            year: 1402,
+            data: [
+                {
+                    month: 4,
+                    data: [
+                        {
+                            day: 8,
+                            isHoliday: true,
+                            description: '۸ تیر عید سعید قربان'
+                        },
+                        {
+                            day: 16,
+                            isHoliday: true,
+                            description: '۱۶ تیر عید سعید غدیر خم [ ١٨ ذوالحجه ]'
+                        }
+                    ]
+                },
+                {
+                    month: 5,
+                    data: [
+                        {
+                            day: 5,
+                            isHoliday: true,
+                            description: '۵ اَمرداد تاسوعای حسینی [ ٩ محرم ]'
+                        },
+                        {
+                            day: 6,
+                            isHoliday: true,
+                            description: '۶ اَمرداد عاشورای حسینی [ ١٠ محرم ]'
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    const [date, setDate] = useState("1367/3/4");
+
+    const selectedDate = (day) => {
+        console.log(day)
+    }
+    
+    return (
+        <>
+            <div className={"row mt-5"}>
+                <div className={"col-4 mx-auto"}>
+                    <Calendar events={events} callback={selectedDate} value={date} options={options}/>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default App;
+```
+
 ## Simple input
 
 Easy to use
