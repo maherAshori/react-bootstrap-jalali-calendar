@@ -361,15 +361,19 @@ class CalendarApp extends React.PureComponent {
     });
   };
   selectDay = item => {
-    this.setState(prevState => ({
+    const m = moment(item.date, 'jYYYY/jM/jD');
+    this.setState({
       monthInfo: {
-        ...prevState.monthInfo,
-        day: item.day
+        number: parseInt(m.format('jM')),
+        name: m.format('jMMMM'),
+        day: parseInt(m.format('jD')),
+        year: parseInt(m.format('jYYYY'))
       }
-    }), () => {
+    }, () => {
       const {
         callback
       } = this.props;
+      this.bind(m, true);
       item.gregorian = moment(item.date, 'jYYYY/jM/jD').format('YYYY-M-D');
       if (callback) callback(item);
     });
