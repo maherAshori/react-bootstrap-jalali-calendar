@@ -86,6 +86,7 @@ _Event property default is `undefined`_
 
 ```js
 import Calendar from 'react-bootstrap-jalali-calendar/dist/calendar';
+import react, {useState} from "react";
 
 function App() {
     const options = {
@@ -138,13 +139,21 @@ function App() {
 
     const selectedDate = (day) => {
         console.log(day)
+        setDate(day.date);
     }
-    
+
     return (
         <>
-            <div className={"row mt-5"}>
-                <div className={"col-4 mx-auto"}>
-                    <Calendar events={events} callback={selectedDate} value={date} options={options}/>
+            <div className={"container pt-5"}>
+                <div className={"row"}>
+                    <div className={"col-3 mx-auto"}>
+                        <Calendar events={events} callback={selectedDate} value={date} options={options}/>
+                    </div>
+                </div>
+                <div className={"row mt-5"}>
+                    <div className={"col-4 mx-auto text-center"}>
+                        <h3>{date}</h3>
+                    </div>
                 </div>
             </div>
         </>

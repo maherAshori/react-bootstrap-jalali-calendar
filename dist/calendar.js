@@ -414,7 +414,7 @@ class CalendarApp extends React.PureComponent {
     }, view === 'day' ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: "fw-bold h-100"
     }, options && options.hideToolsBar ? null : /*#__PURE__*/React.createElement("div", {
-      className: `row align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
+      className: `row g-0 align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
     }, /*#__PURE__*/React.createElement("div", {
       className: 'col-2 text-start'
     }, /*#__PURE__*/React.createElement(Button, {
