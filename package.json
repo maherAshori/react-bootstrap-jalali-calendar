@@ -1,0 +1,60 @@
+{
+  "name": "react-bootstrap-jalali-calendar",
+  "description": "react datepicker created with `react-bootstrap` components without any customs",
+  "keywords": [
+    "datepicker",
+    "react jalaali",
+    "calendar persian",
+    "persian react datepicker",
+    "bootstrap calendar",
+    "bootsatrp jalaali datepicker"
+  ],
+  "author": {
+    "name": "Maher Ashori",
+    "email": "maher.ashori@gmail.com",
+    "url": "https://github.com/maherAshori/react-bootstrap-jalaali-calendar"
+  },
+  "license": "MIT",
+  "version": "0.1.7",
+  "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "main": "/dist/datepicker.js",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^2.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "publish:del": "del -rf dist && mkdir dist",
+    "publish:babel": "babel src/components -d dist --copy-files"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "moment-jalaali": "^0.10.0",
+    "react-bootstrap": "^2.8.0"
+  }
+}

@@ -1,0 +1,25 @@
+@import "dana.css";
+
+/**
+remove arrow from bootstrap source
+ */
+.dropdown-toggle:after {
+    display: none !important;
+}
+
+.react-bootstrap-jalali-calendar {
+    font-family: 'dana', serif !important;
+}
+
+.react-bootstrap-jalali-calendar .pointer {
+    cursor: pointer;
+}
+
+.react-bootstrap-jalali-calendar .years {
+    height: 300px;
+}
+
+.react-bootstrap-jalali-calendar .table {
+    table-layout: fixed;
+}
+
