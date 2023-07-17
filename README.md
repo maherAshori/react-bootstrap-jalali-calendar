@@ -4,7 +4,7 @@ This package created specifically for `react-bootstrap` which will help you to e
 
 Enjoy coding ... 
 
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#required">Required</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#required">Required</a>
 - How to make RTL with `react-bootstrap`
     - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#indexjs">index.js</a>
     - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#indexhtml">index.html</a>
