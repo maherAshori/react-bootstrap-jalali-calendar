@@ -8,6 +8,10 @@ remove arrow from bootstrap source
 }
 
 .react-bootstrap-jalali-calendar {
+    min-width: 350px;
+}
+
+.react-bootstrap-jalali-calendar {
     font-family: 'dana', serif !important;
 }
 

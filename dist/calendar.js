@@ -414,9 +414,9 @@ class CalendarApp extends React.PureComponent {
     }, view === 'day' ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: "fw-bold h-100"
     }, options && options.hideToolsBar ? null : /*#__PURE__*/React.createElement("div", {
-      className: `d-flex align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
+      className: `row align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
     }, /*#__PURE__*/React.createElement("div", {
-      className: 'w-25 text-start'
+      className: 'col-2 text-start'
     }, /*#__PURE__*/React.createElement(Button, {
       variant: toolsSubBtnColor,
       disabled: options && options.stopChangingMonths || disablePrevBtn,
@@ -431,7 +431,7 @@ class CalendarApp extends React.PureComponent {
       fillRule: "evenodd",
       d: "M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
     })))), /*#__PURE__*/React.createElement("div", {
-      className: 'w-50 text-center'
+      className: 'col text-center'
     }, /*#__PURE__*/React.createElement(ButtonGroup, {
       "aria-label": "control Keys"
     }, /*#__PURE__*/React.createElement(Button, {
@@ -445,7 +445,7 @@ class CalendarApp extends React.PureComponent {
       className: "text-decoration-none px-3",
       onClick: () => this.changeView('year')
     }, monthInfo?.year))), /*#__PURE__*/React.createElement("div", {
-      className: 'w-25 text-end'
+      className: 'col-2 text-end'
     }, /*#__PURE__*/React.createElement(Button, {
       variant: toolsSubBtnColor,
       disabled: options && options.stopChangingMonths || disableNextBtn,

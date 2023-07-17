@@ -15,7 +15,7 @@
     "url": "https://github.com/maherAshori/react-bootstrap-jalaali-calendar"
   },
   "license": "MIT",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": false,
   "babel": {
     "presets": [
