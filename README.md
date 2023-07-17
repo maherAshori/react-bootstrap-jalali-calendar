@@ -6,17 +6,17 @@ Enjoy coding ...
 
 - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#required">Required</a>
 - How to make RTL with `react-bootstrap`
-    - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#indexjs">index.js</a>
-    - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#indexhtml">index.html</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#installation">Installation</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#output">What return from the datepicker</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#calendar">Standalone Calendar</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#simple-input">Simple datepicker input</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#multiple-inputs">Multiple inputs</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#array-inputs">Using datepicker in array</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#calendar-events">Calendar events</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#datepicker-properties-">Datepicker Properties</a>
-- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#calendar-options-">Calendar Options</a>
+    - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#indexjs">index.js</a>
+    - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#indexhtml">index.html</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#installation">Installation</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#output">What return from the datepicker</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#calendar">Standalone Calendar</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#simple-input">Simple datepicker input</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#multiple-inputs">Multiple inputs</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#array-inputs">Using datepicker in array</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#calendar-events">Calendar events</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#datepicker-properties-">Datepicker Properties</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#calendar-options-">Calendar Options</a>
 ---
 
 `font-family: dana`
