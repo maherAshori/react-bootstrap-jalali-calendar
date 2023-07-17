@@ -4,6 +4,19 @@ This package created specifically for `react-bootstrap` which will help you to e
 
 Enjoy coding ... 
 
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#required">Required</a>
+- How to make RTL with `react-bootstrap`
+    - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#indexjs">index.js</a>
+    - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#indexhtml">index.html</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#installation">Installation</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#output">What return from the datepicker</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#calendar">Standalone Calendar</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#simple-input">Simple datepicker input</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#multiple-inputs">Multiple inputs</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#array-inputs">Using datepicker in array</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#calendar-events">Calendar events</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#datepicker-properties-">Datepicker Properties</a>
+- <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar/edit/main/README.md#calendar-options-">Calendar Options</a>
 ---
 
 `font-family: dana`
@@ -23,7 +36,7 @@ Please fill free If you encounter an issue using this product, be sure to notify
 
 _We will do our best to improve and cooperate with you_
 
-##index.js
+## index.js
 
 Make your project RTL
 ```js
@@ -44,7 +57,7 @@ root.render(
 reportWebVitals();
 ```
 
-##index.html
+## index.html
 
 Add `dir="rtl"` to your html
 ```html
@@ -58,7 +71,9 @@ Add `dir="rtl"` to your html
 
 In the project directory terminal, you can run:
 
-### `npm install react-bootstrap-jalali-calendar`
+```text
+npm install react-bootstrap-jalali-calendar
+```
 
 ## Output
 
