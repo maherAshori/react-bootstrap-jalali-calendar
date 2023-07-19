@@ -27,7 +27,12 @@ Responsive setting for tablet, mobile and desktop
 
 `font-family: dana`
 
-<img src="https://raw.githubusercontent.com/maherAshori/react-bootstrap-jalali-calendar/main/datepicker.jpg"/>
+| Desktop          | Tablet & Mobile
+| ---------------- | ----------
+| `window.innerWidth > 768` | `window.innerWidth <= 768`
+| <img src="https://raw.githubusercontent.com/maherAshori/react-bootstrap-jalali-calendar/main/datepicker.jpg"/>    | <img src="https://raw.githubusercontent.com/maherAshori/react-bootstrap-jalali-calendar/main/datepicker.responsive.jpg"/>    
+
+
 
 ## Required
 
