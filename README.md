@@ -19,6 +19,12 @@ Enjoy coding ...
 - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#calendar-options-">Calendar Options</a>
 ---
 
+# Version 0.2.1
+
+Responsive setting for tablet, mobile and desktop
+
+---
+
 `font-family: dana`
 
 <img src="https://raw.githubusercontent.com/maherAshori/react-bootstrap-jalali-calendar/main/datepicker.jpg"/>
