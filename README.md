@@ -19,7 +19,7 @@ Enjoy coding ...
 - <a href="https://github.com/maherAshori/react-bootstrap-jalali-calendar#calendar-options-">Calendar Options</a>
 ---
 
-# Version 0.2.1
+# Version >= 0.2.1
 
 Responsive setting for tablet, mobile and desktop
 
