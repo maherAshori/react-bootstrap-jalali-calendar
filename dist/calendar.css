@@ -8,7 +8,7 @@ remove arrow from bootstrap source
 }
 
 .react-bootstrap-jalali-calendar {
-    min-width: 350px;
+    min-width: 320px;
 }
 
 .react-bootstrap-jalali-calendar {
@@ -27,3 +27,15 @@ remove arrow from bootstrap source
     table-layout: fixed;
 }
 
+.modal.datepicker .modal-body {
+    padding: 0!important;
+}
+
+.modal.datepicker .modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal.datepicker .modal-dialog {
+    margin: 0!important;
+}

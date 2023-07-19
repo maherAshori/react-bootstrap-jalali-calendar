@@ -413,111 +413,215 @@ class CalendarApp extends React.PureComponent {
           break;
       }
     }
+    const desktop = () => {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, options && options.hideToolsBar ? null : /*#__PURE__*/React.createElement("div", {
+        className: `row g-0 align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
+      }, /*#__PURE__*/React.createElement("div", {
+        className: 'col-2 text-start'
+      }, /*#__PURE__*/React.createElement(Button, {
+        variant: toolsSubBtnColor,
+        disabled: options && options.stopChangingMonths || disablePrevBtn,
+        onClick: this.prevMonth
+      }, /*#__PURE__*/React.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "16",
+        height: "16",
+        fill: "currentColor",
+        viewBox: "0 0 16 16"
+      }, /*#__PURE__*/React.createElement("path", {
+        fillRule: "evenodd",
+        d: "M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+      })))), /*#__PURE__*/React.createElement("div", {
+        className: 'col text-center'
+      }, /*#__PURE__*/React.createElement(ButtonGroup, {
+        "aria-label": "control Keys"
+      }, /*#__PURE__*/React.createElement(Button, {
+        variant: toolsMainBtnColor,
+        disabled: options && options.stopChangingMonths,
+        className: "text-decoration-none px-3",
+        onClick: () => this.changeView('month')
+      }, monthInfo?.name), /*#__PURE__*/React.createElement(Button, {
+        variant: toolsSubBtnColor,
+        disabled: options && (options.stopChangingYears || options.stopChangingMonths),
+        className: "text-decoration-none px-3",
+        onClick: () => this.changeView('year')
+      }, monthInfo?.year))), /*#__PURE__*/React.createElement("div", {
+        className: 'col-2 text-end'
+      }, /*#__PURE__*/React.createElement(Button, {
+        variant: toolsSubBtnColor,
+        disabled: options && options.stopChangingMonths || disableNextBtn,
+        onClick: this.nextMonth
+      }, /*#__PURE__*/React.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "16",
+        height: "16",
+        fill: "currentColor",
+        viewBox: "0 0 16 16"
+      }, /*#__PURE__*/React.createElement("path", {
+        fillRule: "evenodd",
+        d: "M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+      }))))), /*#__PURE__*/React.createElement(Table, {
+        striped: "columns",
+        className: "m-0 overflow-hidden"
+      }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+        className: `text-center border-0 ${options && options.calendarHeaderColor ? `table-${options.calendarHeaderColor}` : 'table-primary'}`
+      }, /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u0634"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u06CC"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u062F"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u0633"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u0686"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u067E"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u062C"))), /*#__PURE__*/React.createElement("tbody", {
+        className: "overflow-hidden"
+      }, month ? /*#__PURE__*/React.createElement(React.Fragment, null, month.map((week, index) => {
+        return /*#__PURE__*/React.createElement(React.Fragment, {
+          key: index
+        }, /*#__PURE__*/React.createElement("tr", {
+          className: `text-center border-0 ${animation}`
+        }, week.dates.map((date, index) => {
+          const fri = date.name === 'Fri' ? ' text-danger' : '';
+          const event = date.event?.isHoliday ? ' border-bottom border-danger border-top text-danger bg-danger-subtle' : '';
+          const notInMonthAndNotFri = date.month !== monthInfo.number && date.name !== 'Fri' ? ' text-black opacity-25' : '';
+          const notInMonthAndFri = date.month !== monthInfo.number && date.name === 'Fri' ? ' text-danger opacity-50' : '';
+          const currentDay = date.month === monthInfo.number && date.date === today ? ' text-primary bg-primary-subtle' : '';
+          const selectedDay = date.month === monthInfo.number && date.day === monthInfo.day ? '  text-success bg-success-subtle' : '';
+          return /*#__PURE__*/React.createElement("td", {
+            key: index,
+            title: date.event?.description,
+            className: `p-0 align-middle border-0`
+          }, /*#__PURE__*/React.createElement("div", {
+            className: `p-3 pointer${currentDay}${selectedDay}${fri}${event}${notInMonthAndNotFri}${notInMonthAndFri}`,
+            onClick: () => this.selectDay(date)
+          }, date.day));
+        })));
+      })) : null), options && options.hideTodayButton ? null : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("tfoot", {
+        className: 'bg-transparent'
+      }, /*#__PURE__*/React.createElement("tr", {
+        className: "text-center border-0"
+      }, /*#__PURE__*/React.createElement("td", {
+        colSpan: 7,
+        className: "border-0 p-0"
+      }, /*#__PURE__*/React.createElement(Button, {
+        className: "w-100 rounded-0",
+        size: "lg",
+        variant: 'primary',
+        onClick: this.goToToday
+      }, "\u0628\u0631\u0648 \u0628\u0647 \u0627\u0645\u0631\u0648\u0632")))))));
+    };
+    const tablet = () => {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Table, {
+        striped: "columns",
+        className: "m-0 overflow-hidden"
+      }, options && options.hideTodayButton ? null : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("caption", {
+        style: {
+          captionSide: "top"
+        },
+        className: 'bg-transparent p-0'
+      }, /*#__PURE__*/React.createElement(Button, {
+        className: "w-100 rounded-0",
+        size: "lg",
+        variant: 'primary',
+        onClick: this.goToToday
+      }, "\u0628\u0631\u0648 \u0628\u0647 \u0627\u0645\u0631\u0648\u0632"))), /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+        className: `text-center border-0 ${options && options.calendarHeaderColor ? `table-${options.calendarHeaderColor}` : 'table-primary'}`
+      }, /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u0634"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u06CC"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u062F"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u0633"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u0686"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u067E"), /*#__PURE__*/React.createElement("th", {
+        className: "border-0"
+      }, "\u062C"))), /*#__PURE__*/React.createElement("tbody", {
+        className: "overflow-hidden"
+      }, month ? /*#__PURE__*/React.createElement(React.Fragment, null, month.map((week, index) => {
+        return /*#__PURE__*/React.createElement(React.Fragment, {
+          key: index
+        }, /*#__PURE__*/React.createElement("tr", {
+          className: `text-center border-0 ${animation}`
+        }, week.dates.map((date, index) => {
+          const fri = date.name === 'Fri' ? ' text-danger' : '';
+          const event = date.event?.isHoliday ? ' border-bottom border-danger border-top text-danger bg-danger-subtle' : '';
+          const notInMonthAndNotFri = date.month !== monthInfo.number && date.name !== 'Fri' ? ' text-black opacity-25' : '';
+          const notInMonthAndFri = date.month !== monthInfo.number && date.name === 'Fri' ? ' text-danger opacity-50' : '';
+          const currentDay = date.month === monthInfo.number && date.date === today ? ' text-primary bg-primary-subtle' : '';
+          const selectedDay = date.month === monthInfo.number && date.day === monthInfo.day ? '  text-success bg-success-subtle' : '';
+          return /*#__PURE__*/React.createElement("td", {
+            key: index,
+            title: date.event?.description,
+            className: `p-0 align-middle border-0`
+          }, /*#__PURE__*/React.createElement("div", {
+            className: `p-3 pointer${currentDay}${selectedDay}${fri}${event}${notInMonthAndNotFri}${notInMonthAndFri}`,
+            onClick: () => this.selectDay(date)
+          }, date.day));
+        })));
+      })) : null)), options && options.hideToolsBar ? null : /*#__PURE__*/React.createElement("div", {
+        className: `row g-0 align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
+      }, /*#__PURE__*/React.createElement("div", {
+        className: 'col-2 text-start'
+      }, /*#__PURE__*/React.createElement(Button, {
+        variant: toolsSubBtnColor,
+        disabled: options && options.stopChangingMonths || disablePrevBtn,
+        onClick: this.prevMonth
+      }, /*#__PURE__*/React.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "16",
+        height: "16",
+        fill: "currentColor",
+        viewBox: "0 0 16 16"
+      }, /*#__PURE__*/React.createElement("path", {
+        fillRule: "evenodd",
+        d: "M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+      })))), /*#__PURE__*/React.createElement("div", {
+        className: 'col text-center'
+      }, /*#__PURE__*/React.createElement(ButtonGroup, {
+        "aria-label": "control Keys"
+      }, /*#__PURE__*/React.createElement(Button, {
+        variant: toolsMainBtnColor,
+        disabled: options && options.stopChangingMonths,
+        className: "text-decoration-none px-3",
+        onClick: () => this.changeView('month')
+      }, monthInfo?.name), /*#__PURE__*/React.createElement(Button, {
+        variant: toolsSubBtnColor,
+        disabled: options && (options.stopChangingYears || options.stopChangingMonths),
+        className: "text-decoration-none px-3",
+        onClick: () => this.changeView('year')
+      }, monthInfo?.year))), /*#__PURE__*/React.createElement("div", {
+        className: 'col-2 text-end'
+      }, /*#__PURE__*/React.createElement(Button, {
+        variant: toolsSubBtnColor,
+        disabled: options && options.stopChangingMonths || disableNextBtn,
+        onClick: this.nextMonth
+      }, /*#__PURE__*/React.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: "16",
+        height: "16",
+        fill: "currentColor",
+        viewBox: "0 0 16 16"
+      }, /*#__PURE__*/React.createElement("path", {
+        fillRule: "evenodd",
+        d: "M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+      }))))));
+    };
     return /*#__PURE__*/React.createElement("div", {
       className: 'react-bootstrap-jalali-calendar'
     }, view === 'day' ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: "fw-bold h-100"
-    }, options && options.hideToolsBar ? null : /*#__PURE__*/React.createElement("div", {
-      className: `row g-0 align-items-center p-3 tools ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
-    }, /*#__PURE__*/React.createElement("div", {
-      className: 'col-2 text-start'
-    }, /*#__PURE__*/React.createElement(Button, {
-      variant: toolsSubBtnColor,
-      disabled: options && options.stopChangingMonths || disablePrevBtn,
-      onClick: this.prevMonth
-    }, /*#__PURE__*/React.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      width: "16",
-      height: "16",
-      fill: "currentColor",
-      viewBox: "0 0 16 16"
-    }, /*#__PURE__*/React.createElement("path", {
-      fillRule: "evenodd",
-      d: "M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-    })))), /*#__PURE__*/React.createElement("div", {
-      className: 'col text-center'
-    }, /*#__PURE__*/React.createElement(ButtonGroup, {
-      "aria-label": "control Keys"
-    }, /*#__PURE__*/React.createElement(Button, {
-      variant: toolsMainBtnColor,
-      disabled: options && options.stopChangingMonths,
-      className: "text-decoration-none px-5",
-      onClick: () => this.changeView('month')
-    }, monthInfo?.name), /*#__PURE__*/React.createElement(Button, {
-      variant: toolsSubBtnColor,
-      disabled: options && (options.stopChangingYears || options.stopChangingMonths),
-      className: "text-decoration-none px-3",
-      onClick: () => this.changeView('year')
-    }, monthInfo?.year))), /*#__PURE__*/React.createElement("div", {
-      className: 'col-2 text-end'
-    }, /*#__PURE__*/React.createElement(Button, {
-      variant: toolsSubBtnColor,
-      disabled: options && options.stopChangingMonths || disableNextBtn,
-      onClick: this.nextMonth
-    }, /*#__PURE__*/React.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      width: "16",
-      height: "16",
-      fill: "currentColor",
-      viewBox: "0 0 16 16"
-    }, /*#__PURE__*/React.createElement("path", {
-      fillRule: "evenodd",
-      d: "M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-    }))))), /*#__PURE__*/React.createElement(Table, {
-      striped: "columns",
-      className: "m-0 overflow-hidden"
-    }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
-      className: `text-center border-0 ${options && options.calendarHeaderColor ? `table-${options.calendarHeaderColor}` : 'table-primary'}`
-    }, /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u0634"), /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u06CC"), /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u062F"), /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u0633"), /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u0686"), /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u067E"), /*#__PURE__*/React.createElement("th", {
-      className: "border-0"
-    }, "\u062C"))), /*#__PURE__*/React.createElement("tbody", {
-      className: "overflow-hidden"
-    }, month ? /*#__PURE__*/React.createElement(React.Fragment, null, month.map((week, index) => {
-      return /*#__PURE__*/React.createElement(React.Fragment, {
-        key: index
-      }, /*#__PURE__*/React.createElement("tr", {
-        className: `text-center border-0 ${animation}`
-      }, week.dates.map((date, index) => {
-        const fri = date.name === 'Fri' ? ' text-danger' : '';
-        const event = date.event?.isHoliday ? ' border-bottom border-danger border-top text-danger bg-danger-subtle' : '';
-        const notInMonthAndNotFri = date.month !== monthInfo.number && date.name !== 'Fri' ? ' text-black opacity-25' : '';
-        const notInMonthAndFri = date.month !== monthInfo.number && date.name === 'Fri' ? ' text-danger opacity-50' : '';
-        const currentDay = date.month === monthInfo.number && date.date === today ? ' text-primary bg-primary-subtle' : '';
-        const selectedDay = date.month === monthInfo.number && date.day === monthInfo.day ? '  text-success bg-success-subtle' : '';
-        return /*#__PURE__*/React.createElement("td", {
-          key: index,
-          title: date.event?.description,
-          className: `p-0 align-middle border-0`
-        }, /*#__PURE__*/React.createElement("div", {
-          className: `p-3 pointer${currentDay}${selectedDay}${fri}${event}${notInMonthAndNotFri}${notInMonthAndFri}`,
-          onClick: () => this.selectDay(date)
-        }, date.day));
-      })));
-    })) : null), options && options.hideTodayButton ? null : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("tfoot", {
-      className: 'bg-transparent'
-    }, /*#__PURE__*/React.createElement("tr", {
-      className: "text-center border-0"
-    }, /*#__PURE__*/React.createElement("td", {
-      colSpan: 7,
-      className: "border-0 p-0"
-    }, /*#__PURE__*/React.createElement(Button, {
-      className: "w-100 rounded-0",
-      size: "lg",
-      variant: 'primary',
-      onClick: this.goToToday
-    }, "\u0628\u0631\u0648 \u0628\u0647 \u0627\u0645\u0631\u0648\u0632")))))))) : null, view === 'month' ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    }, options.tablet ? tablet() : desktop())) : null, view === 'month' ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: "h-100 months"
     }, /*#__PURE__*/React.createElement("div", {
       className: `p-3 text-center ${options && options.calendarToolsColor ? `bg-${options.calendarToolsColor}` : 'bg-light'}`
