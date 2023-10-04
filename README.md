@@ -384,13 +384,14 @@ export default App;
 | Name          | Default    | Required | Description
 | ------------- | ---------- | -------- | -----------
 | `callback`    | `null`     | Yes      | calendar method to pass the value
-| `value`       | `null`    | Yes      | input value
+| `value`       | `null`     | Yes      | input value
 | `name`        | `null`     | Yes      | input name
 | `id`          | `{name}`   | No       | input id - default is {name} if empty
 | `label`       | `{name}`   | No       | input id - default is {name} if empty
 | `placeholder` | `{name}`   | No       | input id - default is {name} if empty
 | `disabled`    | `false`    | No       | disable input
-| `events`      | `[array]` | No       | calendar events
+| `required`    | `false`    | No       | required input
+| `events`      | `[array]`  | No       | calendar events
 
 
 
