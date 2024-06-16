@@ -1,4 +1,4 @@
-# `react-bootstrap-jalali-calendar`
+# `react bootstrap jalali calendar`
 
 This package created specifically for `react-bootstrap` which will help you to easily add Jalali calendar in your project without any changing in the code.
 
